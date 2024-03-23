@@ -7,10 +7,8 @@ function App() {
 
   function onFormSubmit(event) {
     event.preventDefault()
-    console.log(inputs)
     axios.post('http://localhost:8000/price_estimate', inputs)
     .then(res => {
-      console.log(res.data)
       var priceTag = document.getElementsByName('price')[0]
       priceTag.innerHTML = res.data
     })
